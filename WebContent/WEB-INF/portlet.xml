@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portlet-app xmlns="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" version="2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd http://java.sun.com/xml/ns/portlet/portlet-app_2_0.xsd" id="com.seannewby.secondspringportlet.SecondSpringPortlet.5ee6c08ea2">
+  	<portlet>
+		<portlet-name>SpringDisplay</portlet-name>
+		<display-name xml:lang="en">Spring Display</display-name>
+		<display-name>SecondSpringPortlet</display-name>
+		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+			<portlet-mode>edit</portlet-mode>
+			<portlet-mode>help</portlet-mode>
+			<portlet-mode>config</portlet-mode>			
+		</supports>
+		<supported-locale>en</supported-locale>
+		<portlet-info>
+			<title>Spring Display</title>
+			<short-title>Spring Display</short-title>
+			<keywords>Spring Display</keywords>
+		</portlet-info>
+	</portlet>
+  	<portlet>
+		<portlet-name>SpringForm</portlet-name>
+		<display-name xml:lang="en">Spring Form</display-name>
+		<display-name>Spring Form</display-name>
+		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<portlet-info>
+			<title>Spring Form</title>
+			<short-title>Spring Form</short-title>
+			<keywords>Spring Form</keywords>
+		</portlet-info>
+	</portlet>	
+	<portlet>
+		<portlet-name>SpringWizard</portlet-name>
+		<display-name xml:lang="en">Spring Wizard</display-name>
+		<display-name>Spring Wizard</display-name>
+		<portlet-class>org.springframework.web.portlet.DispatcherPortlet</portlet-class>
+		<init-param>
+			<name>wps.markup</name>
+			<value>html</value>
+		</init-param>
+		<expiration-cache>0</expiration-cache>
+		<supports>
+			<mime-type>text/html</mime-type>
+			<portlet-mode>view</portlet-mode>
+		</supports>
+		<supported-locale>en</supported-locale>
+		<portlet-info>
+			<title>Spring Wizard</title>
+			<short-title>Spring Wizard</short-title>
+			<keywords>Spring Wizard</keywords>
+		</portlet-info>
+	</portlet>	
+	<custom-portlet-mode>
+		<portlet-mode>config</portlet-mode>
+	</custom-portlet-mode>	
+	<default-namespace>http://SecondSpringPortlet/</default-namespace>
+</portlet-app>
