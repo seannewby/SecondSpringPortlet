@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.seannewby.secondspringportlet.common.beans.Address;
 import com.seannewby.secondspringportlet.common.beans.Location;
 import com.seannewby.secondspringportlet.common.dao.LocationDao;
-@Repository
+@Repository(value="locationDaoHardCoded")
 public class LocationDaoHardCodedImpl implements LocationDao {
 	
 	private static ArrayList<Location> list;

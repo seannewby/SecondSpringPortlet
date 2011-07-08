@@ -1,11 +1,13 @@
 package com.seannewby.secondspringportlet.common.validation;
 
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import com.seannewby.secondspringportlet.common.beans.Location;
 
+@Component("locationValidator")
 public class LocationValidator implements Validator {
 
 	@SuppressWarnings("unchecked")

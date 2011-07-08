@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 
 import com.seannewby.secondspringportlet.common.dao.StateDao;
 
-@Repository
+@Repository(value="stateDaoHardCoded")
 public class StateDaoHardCodedImpl implements StateDao {
 
 	public List<String> getStateAbbrList() {

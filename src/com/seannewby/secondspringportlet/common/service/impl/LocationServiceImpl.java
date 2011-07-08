@@ -3,13 +3,14 @@ package com.seannewby.secondspringportlet.common.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.seannewby.secondspringportlet.common.beans.Location;
 import com.seannewby.secondspringportlet.common.dao.LocationDao;
 import com.seannewby.secondspringportlet.common.service.LocationService;
 
-@Service
+@Service(value="locationService")
 public class LocationServiceImpl implements LocationService {
 	
 	private LocationDao locationDao;
@@ -33,7 +34,7 @@ public class LocationServiceImpl implements LocationService {
 	}
 
 	@Autowired
-	public void setLocationDao(LocationDao locationDao) {
+	public void setLocationDao(@Qualifier("locationDaoHardCoded")LocationDao locationDao) {
 		this.locationDao = locationDao; 
 	}
 	

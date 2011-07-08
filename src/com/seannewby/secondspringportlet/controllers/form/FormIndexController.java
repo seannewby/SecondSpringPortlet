@@ -5,9 +5,11 @@ import java.util.List;
 import javax.portlet.ActionResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +19,6 @@ import org.springframework.web.portlet.bind.annotation.ActionMapping;
 import com.seannewby.secondspringportlet.common.beans.Location;
 import com.seannewby.secondspringportlet.common.service.AddressUtilsService;
 import com.seannewby.secondspringportlet.common.service.LocationService;
-import com.seannewby.secondspringportlet.common.validation.LocationValidator;
 
 
 @Controller
@@ -26,7 +27,7 @@ public class FormIndexController {
 	
 	private AddressUtilsService addressUtils;
 	private LocationService locationService;
-	private LocationValidator locationValidator;
+	private Validator locationValidator;
 	
 	@RequestMapping
 	public String showForm(Model model) throws Exception{
@@ -98,17 +99,20 @@ public class FormIndexController {
 	 * 
 	 */
 	@Autowired
+	@Qualifier("addressUtilsService")
 	public void setAddressUtils(AddressUtilsService addressUtils) {
 		this.addressUtils = addressUtils;
 	}
 
 	@Autowired
+	@Qualifier("locationService")
 	public void setLocationService(LocationService locationService) {
 		this.locationService = locationService;
 	}
 
 	@Autowired
-	public void setLocationValidator(LocationValidator locationValidator) {
+	@Qualifier("locationValidator")
+	public void setLocationValidator(Validator locationValidator) {
 		this.locationValidator = locationValidator; 
 	}
 

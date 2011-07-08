@@ -161,6 +161,7 @@ public class WizardIndexController {
 	 * 
 	 */
 	@Autowired
+	@Qualifier("addressUtilsService")
 	public void setAddressUtils(AddressUtilsService addressUtils) {
 		this.addressUtils = addressUtils;
 	}

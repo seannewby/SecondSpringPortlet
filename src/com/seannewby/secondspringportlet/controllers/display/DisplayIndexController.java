@@ -1,6 +1,7 @@
 package com.seannewby.secondspringportlet.controllers.display;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,7 @@ public class DisplayIndexController{
 	 * 
 	 */
 	@Autowired
+	@Qualifier("locationService")
 	public void setLocationService(LocationService locationService) {
 		this.locationService = locationService;
 	}
