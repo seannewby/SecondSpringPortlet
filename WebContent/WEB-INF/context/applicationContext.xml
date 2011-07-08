@@ -2,8 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 	<context:annotation-config/>
 	
@@ -19,6 +21,20 @@
 			</list>
 		</property>
 	</bean>	
+	
+	<bean id="methodLogger"
+		class="com.seannewby.logging.aop.SimpleLogger" />
+	
+	
+	
+	<aop:config>
+		<aop:pointcut id="servicePointcut"
+			expression="execution(* com.seannewby.secondspringportlet..*.*(..))" />
+		<aop:aspect id="loggingAspect" ref="methodLogger">
+			<aop:before method="logMethodEntry" pointcut-ref="servicePointcut" />
+			<aop:after-returning method="logMethodExit" returning="result" pointcut-ref="servicePointcut" />
+		</aop:aspect>
+	</aop:config>
 	
 
 	<!-- Default View Resolver -->
