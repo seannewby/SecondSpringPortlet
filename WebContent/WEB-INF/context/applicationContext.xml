@@ -22,10 +22,7 @@
 		</property>
 	</bean>	
 	
-	<bean id="methodLogger"
-		class="com.seannewby.logging.aop.SimpleLogger" />
-	
-	
+	<bean id="methodLogger" class="com.seannewby.logging.aop.SimpleLogger" />
 	
 	<aop:config>
 		<aop:pointcut id="servicePointcut"
